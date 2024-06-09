@@ -35,22 +35,22 @@ const mul = multiply(2, 6);
 console.log(mul);
 
 // write a function to find the area of square .
-function saquareArea(length) {
-  let area = length * length;
-  return area;
-}
-let length = 8;
-let area = saquareArea(length);
-console.log(area);
-// write a function to get fullname of person using parameter firstname, mid name and last name.
-function getFullname(firstname, middlename, lastname) {
-  if (middlename && lastname) {
-    return firstname + " " + middlename + " " + lastname;
-  } else if (lastname) {
-    return firstname + " " + lastname;
-  } else {
-    return firstname;
-  }
+// function saquareArea(length) {
+//   let area = length * length;
+//   return area;
+// }
+// let length = 8;
+// let area = saquareArea(length);
+// console.log(area);
+// // write a function to get fullname of person using parameter firstname, mid name and last name.
+// function getFullname(firstname, middlename, lastname) {
+//   if (middlename && lastname) {
+//     return firstname + " " + middlename + " " + lastname;
+//   } else if (lastname) {
+//     return firstname + " " + lastname;
+//   } else {
+//     return firstname;
+//   }
 }
 
 // Example usage
