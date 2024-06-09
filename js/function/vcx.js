@@ -66,3 +66,18 @@ console.log(fullname); // Output: "Jane Doe"
 
 fullname = getFullname("Alice");
 console.log(fullname); // Output: "Alice"
+// options1
+// function fullname (fname,mname,lname){
+// const res= fname +" " + mname + " " + lname;
+// return res;
+// option 2
+
+//const res= '${fname} ${mname} ${lname}';
+//return res;
+// option3
+//const res= fname.concat(" ",mname, " ", lname);
+// return res;
+
+// string protyope
+// concat, includes,chartat, indexof, replace, replaceall,
+// touppercase, to lowercase, substring,split,slice
