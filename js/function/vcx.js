@@ -104,14 +104,36 @@ const exs = function () {
   console.log("hello brother");
 };
 // default function
-const pagination = (page = 1, limit) => {
+const pagination = (page = 1, limit = 25) => {
   console.log(page, limit);
 };
-pagination(5);
+pagination(undefined, 25);
 // parametrized function
+const fun = (a, b, c) => {
+  return a + b + c;
+};
 // implicit function
+const sum = (a, b) => a + b;
+console.log(sum(2, 3));
 // explicit function
-// IIFEs
+const sums = (a, b) => {
+  if (a > b) return a + b;
+  return b + a;
+};
+// IIFEs( immediately invoked function expression)\
+(function () {
+  console.log("hello from devops");
+  // nodejs install
+  //git install
+  //git hub application clone
+  //npm install
+})();
 // closures
+let password = "password";
+const getEnv = () => {
+  const password = "password";
+  return password;
+};
+console.log(getEnv());
 // callback function
 // pure function
