@@ -93,3 +93,25 @@ const upperCase = (word) => {
 };
 const response = upperCase("upendra");
 console.log(response);
+// functions
+// anonymous function
+const ex = function () {
+  console.log("hello brother");
+};
+ex();
+// inline function
+const exs = function () {
+  console.log("hello brother");
+};
+// default function
+const pagination = (page = 1, limit) => {
+  console.log(page, limit);
+};
+pagination(5);
+// parametrized function
+// implicit function
+// explicit function
+// IIFEs
+// closures
+// callback function
+// pure function
