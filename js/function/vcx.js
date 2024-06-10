@@ -81,3 +81,15 @@ console.log(fullname); // Output: "Alice"
 // string protyope
 // concat, includes,chartat, indexof, replace, replaceall,
 // touppercase, to lowercase, substring,split,slice
+//  write a function that converts word to uppercase word.
+// function upperCase(word) {
+//   return word.toUpperCase();
+// }
+// console.log(upperCase("upendra"));
+//ES6(arrow function)
+//syntax: const variableNmae= ( a,b,c,d,e,f)=>{}
+const upperCase = (word) => {
+  return word.toUpperCase();
+};
+const response = upperCase("upendra");
+console.log(response);
