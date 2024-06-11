@@ -145,3 +145,33 @@ const welcome = (name, role = "Guest") => {
 };
 console.log(welcome("ram"));
 // write a function to calculate simple interest based on the principal amount
+/**
+ * Calculates simple interest.
+ * @param {number} principal - The principal amount.
+ * @param {number} rate - The annual rate of interest in percentage.
+ * @param {number} time - The time the money is invested or borrowed for, in years.
+ * @returns {number} - The calculated simple interest.
+ */
+const calculateSimpleInterest = (principal, rate, time) => {
+  // Simple interest formula: SI = (P * R * T) / 100
+  return (principal * rate * time) / 100;
+};
+
+// Example usage:
+const principal = 1000; // Principal amount in currency units
+const rate = 5; // Annual rate of interest in percentage
+const time = 3; // Time in years
+
+const interest = calculateSimpleInterest(principal, rate, time);
+console.log(`The simple interest is: ${interest}`); // Output: The simple interest is: 150
+
+// write a default function to create the multiplication table of 5
+const multiplicationTableOf5 = () => {
+  const number = 5;
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${number} x ${i} = ${number * i}`);
+  }
+};
+
+multiplicationTableOf5();
+//
