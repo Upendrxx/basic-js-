@@ -145,33 +145,62 @@ const welcome = (name, role = "Guest") => {
 };
 console.log(welcome("ram"));
 // write a function to calculate simple interest based on the principal amount
+// /**
+//  * Calculates simple interest.
+//  * @param {number} principal - The principal amount.
+//  * @param {number} rate - The annual rate of interest in percentage.
+//  * @param {number} time - The time the money is invested or borrowed for, in years.
+//  * @returns {number} - The calculated simple interest.
+//  */
+// const calculateSimpleInterest = (principal, rate, time) => {
+//   // Simple interest formula: SI = (P * R * T) / 100
+//   return (principal * rate * time) / 100;
+// };
+
+// // Example usage:
+// const principal = 1000; // Principal amount in currency units
+// const rate = 5; // Annual rate of interest in percentage
+// const time = 3; // Time in years
+
+// const interest = calculateSimpleInterest(principal, rate, time);
+// console.log(`The simple interest is: ${interest}`); // Output: The simple interest is: 150
+
+// // write a default function to create the multiplication table of 5
+// const multiplicationTableOf5 = () => {
+//   const number = 5;
+//   for (let i = 1; i <= 10; i++) {
+//     console.log(`${number} x ${i} = ${number * i}`);
+//   }
+// };
+
+// multiplicationTableOf5();
+// write a function to calculate compound interest using math function.
 /**
- * Calculates simple interest.
+ * Calculates compound interest.
  * @param {number} principal - The principal amount.
- * @param {number} rate - The annual rate of interest in percentage.
+ * @param {number} rate - The annual interest rate in percentage.
  * @param {number} time - The time the money is invested or borrowed for, in years.
- * @returns {number} - The calculated simple interest.
+ * @param {number} n - The number of times that interest is compounded per unit time.
+ * @returns {number} - The calculated compound interest.
  */
-const calculateSimpleInterest = (principal, rate, time) => {
-  // Simple interest formula: SI = (P * R * T) / 100
-  return (principal * rate * time) / 100;
+const calculateCompoundInterest = (principal, rate, time, n) => {
+  // Convert rate from percentage to a decimal
+  const rateDecimal = rate / 100;
+
+  // Compound interest formula: A = P(1 + r/n)^(nt)
+  const amount = principal * Math.pow(1 + rateDecimal / n, n * time);
+
+  // Compound interest is the amount minus the principal
+  const interest = amount - principal;
+
+  return interest;
 };
 
 // Example usage:
 const principal = 1000; // Principal amount in currency units
 const rate = 5; // Annual rate of interest in percentage
 const time = 3; // Time in years
+const n = 4; // Number of times the interest is compounded per year
 
-const interest = calculateSimpleInterest(principal, rate, time);
-console.log(`The simple interest is: ${interest}`); // Output: The simple interest is: 150
-
-// write a default function to create the multiplication table of 5
-const multiplicationTableOf5 = () => {
-  const number = 5;
-  for (let i = 1; i <= 10; i++) {
-    console.log(`${number} x ${i} = ${number * i}`);
-  }
-};
-
-multiplicationTableOf5();
-//
+const interest = calculateCompoundInterest(principal, rate, time, n);
+console.log(`The compound interest is: ${interest.toFixed(2)}`); // Output: The compound interest is: 161.22
