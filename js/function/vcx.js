@@ -129,9 +129,9 @@ const sums = (a, b) => {
   //npm install
 })();
 // closures
-let password = "password";
+
 const getEnv = () => {
-  const password = "password";
+  const password = "password"; // hard coded value ( private variable)
   return password;
 };
 console.log(getEnv());
