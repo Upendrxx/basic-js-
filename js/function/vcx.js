@@ -175,32 +175,46 @@ console.log(welcome("ram"));
 
 // multiplicationTableOf5();
 // write a function to calculate compound interest using math function.
-/**
- * Calculates compound interest.
- * @param {number} principal - The principal amount.
- * @param {number} rate - The annual interest rate in percentage.
- * @param {number} time - The time the money is invested or borrowed for, in years.
- * @param {number} n - The number of times that interest is compounded per unit time.
- * @returns {number} - The calculated compound interest.
- */
-const calculateCompoundInterest = (principal, rate, time, n) => {
-  // Convert rate from percentage to a decimal
-  const rateDecimal = rate / 100;
-
-  // Compound interest formula: A = P(1 + r/n)^(nt)
-  const amount = principal * Math.pow(1 + rateDecimal / n, n * time);
-
-  // Compound interest is the amount minus the principal
-  const interest = amount - principal;
-
-  return interest;
+const CI = (p, r, t) => {
+  const updateRate = r / 100;
+  return Math.round(p * Math.pow(1 + updateRate, t) - p);
 };
 
-// Example usage:
-const principal = 1000; // Principal amount in currency units
-const rate = 5; // Annual rate of interest in percentage
-const time = 3; // Time in years
-const n = 4; // Number of times the interest is compounded per year
+console.log(CI(10000, 10, 10)); // This will return the compound interest
 
-const interest = calculateCompoundInterest(principal, rate, time, n);
-console.log(`The compound interest is: ${interest.toFixed(2)}`); // Output: The compound interest is: 161.22
+// const CI = (p, r, t) => {
+//   const updateRate = r / 100;
+//   return Math.round(p * Math.pow(1 + updateRate, t));
+// };
+
+// console.log(CI(10000, 10, 10)); // This will return the total amount including the principal
+
+// // /**
+//  * Calculates compound interest.
+//  * @param {number} principal - The principal amount.
+//  * @param {number} rate - The annual interest rate in percentage.
+//  * @param {number} time - The time the money is invested or borrowed for, in years.
+//  * @param {number} n - The number of times that interest is compounded per unit time.
+//  * @returns {number} - The calculated compound interest.
+//  */
+// const calculateCompoundInterest = (principal, rate, time, n) => {
+//   // Convert rate from percentage to a decimal
+//   const rateDecimal = rate / 100;
+
+//   // Compound interest formula: A = P(1 + r/n)^(nt)
+//   const amount = principal * Math.pow(1 + rateDecimal / n, n * time);
+
+//   // Compound interest is the amount minus the principal
+//   const interest = amount - principal;
+
+//   return interest;
+// };
+
+// // Example usage:
+// const principal = 1000; // Principal amount in currency units
+// const rate = 5; // Annual rate of interest in percentage
+// const time = 3; // Time in years
+// const n = 4; // Number of times the interest is compounded per year
+
+// const interest = calculateCompoundInterest(principal, rate, time, n);
+// console.log(`The compound interest is: ${interest.toFixed(2)}`); // Output: The compound interest is: 161.22
