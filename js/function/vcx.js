@@ -137,3 +137,11 @@ const getEnv = () => {
 console.log(getEnv());
 // callback function
 // pure function
+
+// write a default function to print ' welcome guest' if user name is not your name
+const welcome = (name, role = "Guest") => {
+  if (name === "upendra") return "Welcome Admin";
+  return `Welcome ${role}`;
+};
+console.log(welcome("ram"));
+// write a function to calculate simple interest based on the principal amount
