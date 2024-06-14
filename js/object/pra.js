@@ -81,3 +81,15 @@ const objectTwo = { a: 1, b: 2 };
 const objectThree = { a: 1, b: 3 };
 console.log(isEqual(objectOne, objectTwo));
 console.log(isEqual(objectOne, objectThree));
+//Function to Convert Object to Query String
+const objectToQueryString = (obj) => {
+  return Object.entries(obj)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )
+    .join("&");
+};
+
+const queryParams = { name: "John Doe", age: 25, city: "New York" };
+console.log(objectToQueryString(queryParams));
