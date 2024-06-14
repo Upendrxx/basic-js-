@@ -227,3 +227,13 @@ const gcd = (a, b) => {
 };
 
 console.log(gcd(48, 18));
+//Function to Calculate Fibonacci Sequence up to n Terms
+const fibonacci = (n) => {
+  const fibSequence = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+  }
+  return fibSequence.slice(0, n);
+};
+
+console.log(fibonacci(10));
