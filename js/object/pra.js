@@ -54,3 +54,30 @@ function firstNonRepeatedCharacter(str) {
 // Example usage:
 const result = firstNonRepeatedCharacter("abacddbec");
 console.log(result); // Output: 'e'
+//Function to Merge Two Objects
+const mergeObjects = (obj1, obj2) => {
+  return { ...obj1, ...obj2 };
+};
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const merged = mergeObjects(obj1, obj2);
+console.log(merged);
+//Function to Check if Two Objects are Equal
+const isEqual = (firstObject, secondObject) => {
+  if (Object.keys(firstObject).length !== Object.keys(secondObject).length) {
+    return false;
+  }
+  for (const key in firstObject) {
+    if (firstObject[key] !== secondObject[key]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const objectOne = { a: 1, b: 2 };
+const objectTwo = { a: 1, b: 2 };
+const objectThree = { a: 1, b: 3 };
+console.log(isEqual(objectOne, objectTwo));
+console.log(isEqual(objectOne, objectThree));
