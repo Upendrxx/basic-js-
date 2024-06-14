@@ -218,3 +218,12 @@ console.log(CI(10000, 10, 10)); // This will return the compound interest
 
 // const interest = calculateCompoundInterest(principal, rate, time, n);
 // console.log(`The compound interest is: ${interest.toFixed(2)}`); // Output: The compound interest is: 161.22
+//Function to Find the Greatest Common Divisor (GCD) of Two Numbers
+const gcd = (a, b) => {
+  while (b !== 0) {
+    [a, b] = [b, a % b];
+  }
+  return a;
+};
+
+console.log(gcd(48, 18));
