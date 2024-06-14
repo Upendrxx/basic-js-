@@ -93,3 +93,18 @@ const objectToQueryString = (obj) => {
 
 const queryParams = { name: "John Doe", age: 25, city: "New York" };
 console.log(objectToQueryString(queryParams));
+// Function to Convert an Array of Objects into a Single Object Based on a Key
+const arrayToObject = (arr, key) => {
+  return arr.reduce((acc, curr) => {
+    acc[curr[key]] = curr;
+    return acc;
+  }, {});
+};
+
+const array = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Jane" },
+  { id: 3, name: "Doe" },
+];
+const objFromArray = arrayToObject(array, "id");
+console.log(objFromArray);
