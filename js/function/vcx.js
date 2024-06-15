@@ -237,3 +237,22 @@ const fibonacci = (n) => {
 };
 
 console.log(fibonacci(10));
+// Function to Find the Intersection of Two Objects
+const intersectObjects = (obj1, obj2) => {
+  const intersection = {};
+  for (let key in obj1) {
+    if (
+      obj1.hasOwnProperty(key) &&
+      obj2.hasOwnProperty(key) &&
+      obj1[key] === obj2[key]
+    ) {
+      intersection[key] = obj1[key];
+    }
+  }
+  return intersection;
+};
+
+const objX = { a: 1, b: 2, c: 3 };
+const objY = { a: 1, b: 4, d: 5 };
+const intersection = intersectObjects(objX, objY);
+console.log(intersection);
