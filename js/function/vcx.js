@@ -265,3 +265,22 @@ const removeProperty = (obj, property) => {
 const person = { name: "Alice", age: 25, city: "New York" };
 const updatedPerson = removeProperty(person, "age");
 console.log(updatedPerson);
+//Function to Group an Array of Objects by a Key
+const groupBy = (array, key) => {
+  return array.reduce((result, currentValue) => {
+    (result[currentValue[key]] = result[currentValue[key]] || []).push(
+      currentValue
+    );
+    return result;
+  }, {});
+};
+
+const people = [
+  { name: "Alice", age: 21 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 21 },
+  { name: "David", age: 25 },
+  { name: "Eve", age: 21 },
+];
+const groupedByAge = groupBy(people, "age");
+console.log(groupedByAge);
