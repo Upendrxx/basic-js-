@@ -256,3 +256,12 @@ const objX = { a: 1, b: 2, c: 3 };
 const objY = { a: 1, b: 4, d: 5 };
 const intersection = intersectObjects(objX, objY);
 console.log(intersection);
+//Function to Remove a Property from an Object
+const removeProperty = (obj, property) => {
+  const { [property]: _, ...newObj } = obj;
+  return newObj;
+};
+
+const person = { name: "Alice", age: 25, city: "New York" };
+const updatedPerson = removeProperty(person, "age");
+console.log(updatedPerson);
