@@ -284,3 +284,22 @@ const people = [
 ];
 const groupedByAge = groupBy(people, "age");
 console.log(groupedByAge);
+//Function to Compare Two Objects and Get Differences
+const diffObjects = (obj1, obj2) => {
+  const diffs = {};
+  for (const key in obj1) {
+    if (obj1[key] !== obj2[key]) {
+      diffs[key] = { obj1: obj1[key], obj2: obj2[key] };
+    }
+  }
+  for (const key in obj2) {
+    if (!(key in obj1)) {
+      diffs[key] = { obj1: undefined, obj2: obj2[key] };
+    }
+  }
+  return diffs;
+};
+
+const obj1 = { a: 1, b: 2, c: 3 };
+const obj2 = { a: 1, b: 3, d: 4 };
+console.log(diffObjects(obj1, obj2));
