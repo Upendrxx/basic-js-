@@ -303,3 +303,19 @@ const diffObjects = (obj1, obj2) => {
 const obj1 = { a: 1, b: 2, c: 3 };
 const obj2 = { a: 1, b: 3, d: 4 };
 console.log(diffObjects(obj1, obj2));
+// Function to Convert a Map to an Object
+const mapToObject = (map) => {
+  const obj = {};
+  map.forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+};
+
+// Example usage:
+const exampleMap = new Map([
+  ["a", 1],
+  ["b", 2],
+  ["c", 3],
+]);
+console.log(mapToObject(exampleMap));
