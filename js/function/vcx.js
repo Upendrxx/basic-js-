@@ -363,4 +363,20 @@ const transformObject = (obj, fn) => {
 // Example usage:
 const exampleObj31 = { a: 1, b: 2, c: 3 };
 const transformedObj = transformObject(exampleObj31, (value) => value * 2);
-console.log(transformedObj); // Output: { a: 2, b: 4, c: 6 }
+console.log(transformedObj);
+//Function to Merge Arrays in Object Properties
+const mergeObjectArrays = (obj) => {
+  return Object.keys(obj).reduce((acc, key) => {
+    if (Array.isArray(obj[key])) {
+      acc[key] = [...new Set([...(acc[key] || []), ...obj[key]])];
+    } else {
+      acc[key] = obj[key];
+    }
+    return acc;
+  }, {});
+};
+
+// Example usage:
+const exampleObj30 = { a: [1, 2], b: [2, 3], c: [1, 4, 2] };
+const mergedArraysObj = mergeObjectArrays(exampleObj30);
+console.log(mergedArraysObj);
