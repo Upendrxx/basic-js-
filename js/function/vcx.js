@@ -392,3 +392,20 @@ const removeUndefinedProperties = (obj) => {
 const exampleObj26 = { a: 1, b: undefined, c: 3 };
 const cleanedObj = removeUndefinedProperties(exampleObj26);
 console.log(cleanedObj);
+//Function to Get All Leaf Nodes in a Nested Object
+const getLeafNodes = (obj, path = "") => {
+  let leaves = [];
+  for (const key in obj) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      leaves = leaves.concat(getLeafNodes(obj[key], `${path}${key}.`));
+    } else {
+      leaves.push({ path: `${path}${key}`, value: obj[key] });
+    }
+  }
+  return leaves;
+};
+
+// Example usage:
+const exampleObj33 = { a: 1, b: { c: 2, d: { e: 3 } } };
+const leafNodes = getLeafNodes(exampleObj33);
+console.log(leafNodes);
