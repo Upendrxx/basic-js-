@@ -380,3 +380,15 @@ const mergeObjectArrays = (obj) => {
 const exampleObj30 = { a: [1, 2], b: [2, 3], c: [1, 4, 2] };
 const mergedArraysObj = mergeObjectArrays(exampleObj30);
 console.log(mergedArraysObj);
+// Function to Remove Undefined Properties from an Object
+const removeUndefinedProperties = (obj) => {
+  return Object.keys(obj).reduce((acc, key) => {
+    if (obj[key] !== undefined) acc[key] = obj[key];
+    return acc;
+  }, {});
+};
+
+// Example usage:
+const exampleObj26 = { a: 1, b: undefined, c: 3 };
+const cleanedObj = removeUndefinedProperties(exampleObj26);
+console.log(cleanedObj);
