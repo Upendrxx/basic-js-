@@ -352,3 +352,15 @@ const deepObj2 = { a: 1, b: { c: 3, d: 4 } };
 const deepObj3 = { a: 1, b: { c: 3, d: 5 } };
 console.log(deepCompare(deepObj1, deepObj2));
 console.log(deepCompare(deepObj1, deepObj3));
+//Function to Transform an Object Based on a Function
+const transformObject = (obj, fn) => {
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[key] = fn(obj[key], key);
+    return acc;
+  }, {});
+};
+
+// Example usage:
+const exampleObj31 = { a: 1, b: 2, c: 3 };
+const transformedObj = transformObject(exampleObj31, (value) => value * 2);
+console.log(transformedObj); // Output: { a: 2, b: 4, c: 6 }
