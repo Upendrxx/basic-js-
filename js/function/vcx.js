@@ -431,3 +431,15 @@ const exampleObj35 = {
   },
 };
 console.log(getObjectMethods(exampleObj35));
+//Function to Create an Object from Two Arrays
+const createObjectFromArrays = (keys, values) => {
+  return keys.reduce((obj, key, index) => {
+    obj[key] = values[index];
+    return obj;
+  }, {});
+};
+
+const keysArray = ["a", "b", "c"];
+const valuesArray = [1, 2, 3];
+const objFromArrays = createObjectFromArrays(keysArray, valuesArray);
+console.log(objFromArrays);
