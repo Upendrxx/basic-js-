@@ -451,3 +451,20 @@ const createNestedObject = (path, value) => {
 const pathString = "a.b.c.d";
 const nestedObj = createNestedObject(pathString, 5);
 console.log(nestedObj);
+//Function to Convert Object Keys to Camel Case
+const toCamelCase = (str) => {
+  return str.replace(/([-_][a-z])/g, (group) =>
+    group.toUpperCase().replace("-", "").replace("_", "")
+  );
+};
+
+const keysToCamelCase = (obj) => {
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[toCamelCase(key)] = obj[key];
+    return acc;
+  }, {});
+};
+
+const exampleObj39 = { first_name: "John", last_name: "Doe" };
+const camelCaseObj = keysToCamelCase(exampleObj39);
+console.log(camelCaseObj);
