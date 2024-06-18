@@ -409,3 +409,25 @@ const getLeafNodes = (obj, path = "") => {
 const exampleObj33 = { a: 1, b: { c: 2, d: { e: 3 } } };
 const leafNodes = getLeafNodes(exampleObj33);
 console.log(leafNodes);
+//Function to Get All Methods of an Object
+const getObjectMethods = (obj) => {
+  let methods = [];
+  for (let key in obj) {
+    if (typeof obj[key] === "function") {
+      methods.push(key);
+    }
+  }
+  return methods;
+};
+
+const exampleObj35 = {
+  a: 1,
+  b: 2,
+  c() {
+    return 3;
+  },
+  d() {
+    return 4;
+  },
+};
+console.log(getObjectMethods(exampleObj35));
