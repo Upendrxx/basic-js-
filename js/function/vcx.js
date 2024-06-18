@@ -443,3 +443,11 @@ const keysArray = ["a", "b", "c"];
 const valuesArray = [1, 2, 3];
 const objFromArrays = createObjectFromArrays(keysArray, valuesArray);
 console.log(objFromArrays);
+// Function to Create a Multi-Level Nested Object from a String Path
+const createNestedObject = (path, value) => {
+  return path.split(".").reduceRight((acc, key) => ({ [key]: acc }), value);
+};
+
+const pathString = "a.b.c.d";
+const nestedObj = createNestedObject(pathString, 5);
+console.log(nestedObj);
