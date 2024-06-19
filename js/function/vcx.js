@@ -479,3 +479,11 @@ const capitalizeStringValues = (obj) => {
 const exampleObj38 = { a: 1, b: "hello", c: "world", d: 2 };
 const capitalizedObj = capitalizeStringValues(exampleObj38);
 console.log(capitalizedObj);
+//Function to Convert an Object to a Map
+const objectToMap = (obj) => {
+  return new Map(Object.entries(obj));
+};
+
+const exampleObj34 = { a: 1, b: 2, c: 3 };
+const map = objectToMap(exampleObj34);
+console.log(map);
