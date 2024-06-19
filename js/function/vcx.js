@@ -468,3 +468,14 @@ const keysToCamelCase = (obj) => {
 const exampleObj39 = { first_name: "John", last_name: "Doe" };
 const camelCaseObj = keysToCamelCase(exampleObj39);
 console.log(camelCaseObj);
+// Function to Capitalize All String Values in an Object
+const capitalizeStringValues = (obj) => {
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[key] = typeof obj[key] === "string" ? obj[key].toUpperCase() : obj[key];
+    return acc;
+  }, {});
+};
+
+const exampleObj38 = { a: 1, b: "hello", c: "world", d: 2 };
+const capitalizedObj = capitalizeStringValues(exampleObj38);
+console.log(capitalizedObj);
