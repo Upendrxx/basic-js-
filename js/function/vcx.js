@@ -487,3 +487,19 @@ const objectToMap = (obj) => {
 const exampleObj34 = { a: 1, b: 2, c: 3 };
 const map = objectToMap(exampleObj34);
 console.log(map);
+// Function to Freeze an Object Deeply
+const deepFreeze = (obj) => {
+  Object.keys(obj).forEach((name) => {
+    const prop = obj[name];
+    if (typeof prop === "object" && prop !== null) {
+      deepFreeze(prop);
+    }
+  });
+  return Object.freeze(obj);
+};
+
+// Example usage:
+const exampleObj32 = { a: 1, b: { c: 2, d: { e: 3 } } };
+const frozenObj2 = deepFreeze(exampleObj32);
+frozenObj2.b.d.e = 4;
+console.log(frozenObj2);
