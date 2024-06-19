@@ -503,3 +503,19 @@ const exampleObj32 = { a: 1, b: { c: 2, d: { e: 3 } } };
 const frozenObj2 = deepFreeze(exampleObj32);
 frozenObj2.b.d.e = 4;
 console.log(frozenObj2);
+//Function to Check if Two Objects Have the Same Structure (Keys Only)
+const sameStructure = (obj1, obj2) => {
+  const obj1Keys = Object.keys(obj1);
+  const obj2Keys = Object.keys(obj2);
+  if (obj1Keys.length !== obj2Keys.length) return false;
+  return obj1Keys.every(
+    (key) => obj2Keys.includes(key) && typeof obj1[key] === typeof obj2[key]
+  );
+};
+
+// Example usage:
+const objA2 = { a: 1, b: { c: 2, d: 3 } };
+const objB2 = { a: 10, b: { c: 20, d: 30 } };
+const objC2 = { a: 1, b: { c: 2, e: 3 } };
+console.log(sameStructure(objA2, objB2));
+console.log(sameStructure(objA2, objC2));
