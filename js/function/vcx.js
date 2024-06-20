@@ -498,7 +498,6 @@ const deepFreeze = (obj) => {
   return Object.freeze(obj);
 };
 
-// Example usage:
 const exampleObj32 = { a: 1, b: { c: 2, d: { e: 3 } } };
 const frozenObj2 = deepFreeze(exampleObj32);
 frozenObj2.b.d.e = 4;
@@ -513,9 +512,17 @@ const sameStructure = (obj1, obj2) => {
   );
 };
 
-// Example usage:
 const objA2 = { a: 1, b: { c: 2, d: 3 } };
 const objB2 = { a: 10, b: { c: 20, d: 30 } };
 const objC2 = { a: 1, b: { c: 2, e: 3 } };
 console.log(sameStructure(objA2, objB2));
 console.log(sameStructure(objA2, objC2));
+//Function to Get All Values of a Specific Type from an Object
+const getValuesByType = (obj, type) => {
+  return Object.values(obj).filter((value) => typeof value === type);
+};
+
+// Example usage:
+const exampleObj37 = { a: 1, b: "string", c: true, d: 2, e: "another" };
+const stringValues = getValuesByType(exampleObj37, "string");
+console.log(stringValues);
