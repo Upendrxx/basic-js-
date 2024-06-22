@@ -108,3 +108,21 @@ const array = [
 ];
 const objFromArray = arrayToObject(array, "id");
 console.log(objFromArray);
+// object
+// CRUD=> create ,read, update, delete
+
+// object => complex datatype
+const person = {
+  //key value pair
+  firstName: "upendra",
+  lastName: "amgain",
+  hairColor: "black",
+  birthyear: "2002",
+  age: "22",
+  //getfullName:()=>{}
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+//write a function to show the age from dob get age using arrow function
